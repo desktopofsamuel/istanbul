@@ -27,12 +27,7 @@ export const pageQuery = graphql`
     PeopleList: allAirtable(filter: { table: { eq: "People" } }) {
       edges {
         node {
-          table
-          data {
-            Person
-            Persontags
-            Slug
-          }
+          ...people
         }
       }
     }

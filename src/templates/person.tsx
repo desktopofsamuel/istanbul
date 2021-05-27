@@ -8,6 +8,7 @@ const PersonTemplate = ({ data, pageContext }) => {
   return (
     <main>
       <h1>Readlist of {Person.Person}</h1>
+      <p>{Person.Persondescription}</p>
       <ul>
         {BookList.map((ne) => (
           <li>

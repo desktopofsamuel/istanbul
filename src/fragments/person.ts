@@ -5,6 +5,10 @@ export const PeopleFragment = graphql`
     table
     data {
       Person
+      Persondescription
+      Personphoto {
+        url
+      }
       Books {
         data {
           Bookname
