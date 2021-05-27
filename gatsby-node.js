@@ -30,6 +30,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       component: personPage,
       context: {
         // id: node.ID,
+        slug: node.data.Slug,
       },
     });
   });

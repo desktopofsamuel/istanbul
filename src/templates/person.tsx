@@ -1,20 +1,21 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 const PersonTemplate = ({ data, pageContext }) => {
-  const next = data.airtable.data;
-  const BookList = next.Books;
+  const Person = data.airtable.data;
+  const BookList = Person.Books;
 
-  console.log(data);
   return (
     <main>
-      <h1>Readlist of {next.Person}</h1>
-
-      {BookList.map((ne) => (
-        <p>
-          {ne.data.Bookname} by {ne.data.Bookauthor}
-        </p>
-      ))}
+      <h1>Readlist of {Person.Person}</h1>
+      <ul>
+        {BookList.map((ne) => (
+          <li>
+            <Link to={ne.data.Booklink}>{ne.data.Bookname}</Link> by{` `}
+            {ne.data.Bookauthor}
+          </li>
+        ))}
+      </ul>
     </main>
   );
 };
